@@ -1,24 +1,42 @@
-// Avoid `console` errors in browsers that lack a console.
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
+;(function($, Modernizr) {
+  'use strict';
 
-    while (length--) {
-        method = methods[length];
+  /**
+   * Autofocus input element on page load
+   */
+  if (!Modernizr.input.autofocus) {
+    // get the form and its input elements
+    var form = document.forms[0],
+      inputs = form.elements;
 
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
+    // if no autofocus, put the focus in the first field
+    inputs[0].focus();
+  }
+
+  /**
+   * Input placeholder polyfill
+   */
+  if(!Modernizr.input.placeholder){
+    var input;
+    $('[placeholder]').focus(function() {
+      input = $(this);
+      if (input.val() === input.attr('placeholder')) {
+        input.val('').removeClass('placeholder');
+      }
+    }).blur(function() {
+      input = $(this);
+      if (input.val() === '' || input.val() === input.attr('placeholder')) {
+        input.val(input.attr('placeholder')).addClass('placeholder');
+      }
+    }).blur();
+    $('[placeholder]').parents('form').submit(function() {
+      $(this).find('[placeholder]').each(function() {
+        input = $(this);
+        if (input.val() === input.attr('placeholder')) {
+          return false;
         }
-    }
-}());
+      });
+    });
+  }
 
-// Place any jQuery/helper plugins in here.
+})(window.jQuery, window.Modernizr);

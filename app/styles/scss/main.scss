@@ -18,7 +18,6 @@
   @return ($target / $context) * 1em;
 }
 
-
 /**
  * STYLES
  */
@@ -66,7 +65,7 @@ form {
   padding-top: 5px;
 }
 
-input[type="email"] {
+.email {
   background: transparent;
   border: none;
   font-family: 'itc_centurybookcondensed';
@@ -76,9 +75,19 @@ input[type="email"] {
   width: 99%;
 }
 
-::-webkit-input-placeholder,
-::-ms-input-placeholder,
+.placeholder {
+  color: #464646;
+}
+::-webkit-input-placeholder {
+  color: #464646;
+}
+:-ms-input-placeholder {
+  color: #464646;
+}
 ::-moz-placeholder {
+  color: #464646;
+}
+:-moz-placeholder {
   color: #464646;
 }
 
