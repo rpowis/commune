@@ -31,11 +31,11 @@ permalink: pretty
 
 # Publish posts with future date.
 # _config.build.yml sets this to false on `grunt build`
-future: true
+future: false
 
 # Compile posts in the _drafts directory.
 # _config.build.yml sets this to false on `grunt build`
-show_drafts: true
+show_drafts: false
 
 # Split posts over multiple subdirectories called “page2”, “page3”, … “pageN”
 paginate: 0
