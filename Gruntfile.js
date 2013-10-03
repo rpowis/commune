@@ -323,8 +323,8 @@ module.exports = function (grunt) {
       },
       check: {
         src: [
-          '<%= yeoman.app %>}/styles/**/*.css',
-          '<%= yeoman.app %>}/styles/scss/**/*.scss'
+          '<%= yeoman.app %>/styles/**/*.css',
+          '<%= yeoman.app %>/styles/scss/**/*.scss'
         ]
       }
     },
@@ -336,8 +336,36 @@ module.exports = function (grunt) {
       ],
       dist: [
         'compass:dist',
+        'modernizr',
         'copy:dist'
       ]
+    },
+    modernizr: {
+      'devFile' : '<%= yeoman.app %>/_bower_components/modernizr/modernizr.js',
+      'outputFile' : '<%= yeoman.app %>/_bower_components/modernizr/modernizr-custom.js',
+      'extra' : {
+        'shiv' : true,
+        'printshiv' : false,
+        'load' : false,
+        'mq' : false,
+        'cssclasses' : false
+      },
+      'extensibility' : {
+        'addtest' : false,
+        'prefixed' : false,
+        'teststyles' : false,
+        'testprops' : false,
+        'testallprops' : false,
+        'hasevents' : false,
+        'prefixes' : false,
+        'domprefixes' : false
+      },
+      'uglify' : false,
+      // Define any tests you want to implicitly include.
+      // 'tests' : [],
+      'parseFiles' : true,
+      "files" : ['<%= yeoman.app %>'],
+      'matchCommunityTests' : true,
     }
   });
 

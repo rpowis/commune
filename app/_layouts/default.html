@@ -15,9 +15,15 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
+    {% if site.baseurl == '/' %}
+      {% assign modernizr = 'modernizr' %}
+    {% else %}
+      {% assign modernizr = 'modernizr-custom' %}
+    {% endif %}
+
     <!-- build:js(app) scripts/head-scripts.js -->
     <!-- Replace with a custom modernizer build for production -->
-    <script src="_bower_components/modernizr/modernizr.js"></script>
+    <script src="_bower_components/modernizr/{{ modernizr }}.js"></script>
     <!-- endbuild -->
   </head>
 
