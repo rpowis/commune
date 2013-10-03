@@ -23,6 +23,10 @@ exclude: ['images', 'styles', 'scripts', 'fonts',
 # .htaccess is a good example since dotfiles are excluded by default.
 include: []
 
+safe: true
+
+baseurl: "/"
+
 # Default post path style
 # date  /:categories/:year/:month/:day/:title.html
 # pretty  /:categories/:year/:month/:day/:title/
