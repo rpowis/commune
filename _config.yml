@@ -21,7 +21,7 @@ exclude: ['images', 'styles', 'scripts', 'fonts',
 
 # Force inclusion of directories and/or files in the conversion.
 # .htaccess is a good example since dotfiles are excluded by default.
-include: ['.htaccess']
+# include: ['.htaccess']
 
 # Default post path style
 # date  /:categories/:year/:month/:day/:title.html
