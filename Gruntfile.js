@@ -107,7 +107,7 @@ module.exports = function (grunt) {
     compass: {
       options: {
         // If you're using global Sass gems, require them here.
-        // require: ['singularity', 'jacket'],
+        require: ['compass-normalize'],
         bundleExec: true,
         sassDir: '<%= yeoman.app %>/styles/scss',
         cssDir: '.tmp/styles',
