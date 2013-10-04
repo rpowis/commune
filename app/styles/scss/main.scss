@@ -5,6 +5,7 @@
 @import 'normalize/typography';
 
 @import 'compass';
+@import 'breakpoint';
 
 @import 'fonts';
 
@@ -12,21 +13,32 @@
 @import 'h5bp-helpers';
 
 /**
+ * VARIABLES
+ */
+$breakpoint-to-ems: true;
+$small: max-width 30em;
+
+/**
  * FUNCTIONS
  */
-@function em($target, $context) {
+@function em($target, $context: 16) {
   @return ($target / $context) * 1em;
 }
 
 /**
  * STYLES
  */
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: black;
   color: white;
   font-family: 'itc_centurybookcondensed';
   font-size: 100%;
   margin: 5% 10% 0;
+  position: relative;
 }
 
 a {
@@ -40,23 +52,40 @@ img {
   left: -5px;
 }
 
+.logo {
+  max-width: 100%;
+}
+
 .where, .time {
-  font-size: em(38, 16);
+  font-size: em(38);
+
+  @include breakpoint($small) {
+    font-size: em(26);
+  }
+}
+
+.where {
+  @include breakpoint($small) {
+    margin-top: 5%;
+  }
 }
 
 .lower {
-  @include clearfix;
+  @include pie-clearfix;
   @include box-sizing(border-box);
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  bottom: 10%;
   margin-bottom: 5%;
   width: 100%;
+  @include breakpoint($small) {
+  }
 }
 
 .signup {
-  float: left;
-  margin-right: 1%;
-  width: 62%;
+  overflow: hidden;
+
+  @include breakpoint($small) {
+  }
 }
 
 form {
@@ -69,7 +98,7 @@ form {
   background: transparent;
   border: none;
   font-family: 'itc_centurybookcondensed';
-  font-size: em(24, 16);
+  font-size: em(24);
   color: white;
   outline: none;
   width: 99%;
@@ -99,17 +128,31 @@ input[type="submit"] {
 }
 
 .dates {
+  float: right;
   list-style: none;
   margin: 0;
-  padding: 0;
-  overflow: hidden;
+  padding-left: 1%;
+
+  @include breakpoint($small) {
+    float: none;
+    padding-left: 0;
+    margin-bottom: 10%;
+  }
 
   li {
-    font-size: em(34, 16);
+    font-size: em(34);
+
+    @include breakpoint($small) {
+      font-size: em(26);
+    }
   }
 
   li:first-child {
     font-family: 'itc_centuryboldcondensed';
-    font-size: em(46, 16);
+    font-size: em(46);
+
+    @include breakpoint($small) {
+      font-size: em(38);
+    }
   }
 }
