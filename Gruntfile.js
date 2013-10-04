@@ -107,7 +107,7 @@ module.exports = function (grunt) {
     compass: {
       options: {
         // If you're using global Sass gems, require them here.
-        require: ['compass-normalize'],
+        require: ['compass-normalize', 'breakpoint'],
         bundleExec: true,
         sassDir: '<%= yeoman.app %>/styles/scss',
         cssDir: '.tmp/styles',
@@ -364,7 +364,7 @@ module.exports = function (grunt) {
       // Define any tests you want to implicitly include.
       // 'tests' : [],
       'parseFiles' : true,
-      "files" : ['<%= yeoman.app %>'],
+      'files' : ['<%= yeoman.app %>'],
       'matchCommunityTests' : true,
     }
   });

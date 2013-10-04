@@ -2,6 +2,9 @@ GEM
   remote: http://rubygems.org/
   specs:
     blankslate (2.1.2.4)
+    breakpoint (2.0.7)
+      compass (>= 0.12.1)
+      sass (>= 3.2.0)
     chunky_png (1.2.8)
     classifier (1.3.3)
       fast-stemmer (>= 1.0.0)
@@ -50,6 +53,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  breakpoint (~> 2.0.7)
   compass (>= 0.12)
   compass-normalize (~> 1.4.3)
   csscss (~> 1.3)
