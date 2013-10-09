@@ -26,7 +26,8 @@
     "grunt-usemin": "~0.1.12",
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.1.1",
-    "grunt-modernizr": "~0.3.0"
+    "grunt-modernizr": "~0.3.0",
+    "grunt-favicons": "~0.3.1"
   },
   "engines": {
     "node": ">=0.8.0"

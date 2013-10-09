@@ -366,6 +366,18 @@ module.exports = function (grunt) {
       'parseFiles' : true,
       'files' : ['<%= yeoman.app %>'],
       'matchCommunityTests' : true,
+    },
+    favicons: {
+      options: {
+        html: 'dist/index.html',
+        HTMLPrefix: 'images/',
+        appleTouchBackgroundColor: '#ffffff',
+        tileColor: '#ffffff'
+      },
+      icons: {
+        src: 'app/images/favicon.png',
+        dest: 'dist/images'
+      },
     }
   });
 
@@ -414,6 +426,7 @@ module.exports = function (grunt) {
     'svgmin',
     'rev',
     'usemin',
+    'favicons',
     'htmlmin'
     ]);
 
