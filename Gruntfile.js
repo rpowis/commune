@@ -367,6 +367,7 @@ module.exports = function (grunt) {
       'files' : ['<%= yeoman.app %>'],
       'matchCommunityTests' : true,
     },
+    // TODO: fork grunt-favicons and use png2ico
     favicons: {
       options: {
         html: 'dist/index.html',
@@ -379,6 +380,7 @@ module.exports = function (grunt) {
         dest: 'dist'
       },
     },
+    // TODO: convert shell command to use png2ico on npm
     shell: {
       png2ico: {
         command: 'png2ico <%= yeoman.dist %>/favicon.ico <%= yeoman.app %>/images/favicon.16x16.png <%= yeoman.app %>/images/favicon.32x32.png --colors 16'

@@ -29,27 +29,26 @@ $small: max-width 30em;
  * STYLES
  */
 html, body {
-  height: 100%;
+  height: 95%;
 }
 
 body {
   background-color: black;
   color: white;
   font-family: 'itc_centurybookcondensed';
-  font-size: 100%;
+  font-size: 70%;
   margin: 5% 10% 0;
   position: relative;
+
+  @include breakpoint($small) {
+    font-size: 100%;
+  }
 }
 
 a {
   color: white;
   display: block;
   text-decoration: none;
-}
-
-img {
-  position: relative;
-  left: -5px;
 }
 
 .logo {
@@ -75,7 +74,6 @@ img {
   @include box-sizing(border-box);
   position: absolute;
   bottom: 10%;
-  margin-bottom: 5%;
   width: 100%;
   @include breakpoint($small) {
   }
