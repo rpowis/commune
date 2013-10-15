@@ -370,14 +370,19 @@ module.exports = function (grunt) {
     favicons: {
       options: {
         html: 'dist/index.html',
-        HTMLPrefix: 'images/',
+        HTMLPrefix: '/',
         appleTouchBackgroundColor: '#ffffff',
         tileColor: '#ffffff'
       },
       icons: {
         src: 'app/images/favicon.png',
-        dest: 'dist/images'
+        dest: 'dist'
       },
+    },
+    shell: {
+      png2ico: {
+        command: 'png2ico <%= yeoman.dist %>/favicon.ico <%= yeoman.app %>/images/favicon.16x16.png <%= yeoman.app %>/images/favicon.32x32.png --colors 16'
+      }
     }
   });
 
@@ -427,6 +432,7 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'favicons',
+    'shell',
     'htmlmin'
     ]);
 

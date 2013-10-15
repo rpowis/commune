@@ -27,7 +27,8 @@
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.1.1",
     "grunt-modernizr": "~0.3.0",
-    "grunt-favicons": "~0.3.1"
+    "grunt-favicons": "~0.3.1",
+    "grunt-shell": "~0.5.0"
   },
   "engines": {
     "node": ">=0.8.0"
