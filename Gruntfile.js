@@ -1,5 +1,4 @@
 // Generated on 2013-09-30 using generator-jekyllrb 0.4.0
-'use strict';
 
 // Directory reference:
 //   css: styles
@@ -9,6 +8,8 @@
 //   fonts: fonts
 
 module.exports = function (grunt) {
+  'use strict';
+  
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
   // Load all Grunt tasks
