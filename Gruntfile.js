@@ -9,7 +9,7 @@
 
 module.exports = function (grunt) {
   'use strict';
-  
+
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
   // Load all Grunt tasks
@@ -385,6 +385,20 @@ module.exports = function (grunt) {
     shell: {
       png2ico: {
         command: 'png2ico <%= yeoman.dist %>/favicon.ico <%= yeoman.app %>/images/favicon.16x16.png <%= yeoman.app %>/images/favicon.32x32.png --colors 16'
+      }
+    },
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:rpowis/commune.git',
+          branch: 'gh-pages'
+        }
       }
     }
   });
