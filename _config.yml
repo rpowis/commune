@@ -41,10 +41,6 @@ future: false
 # _config.build.yml sets this to false on `grunt build`
 show_drafts: false
 
-# Split posts over multiple subdirectories called “page2”, “page3”, … “pageN”
-paginate: 0
-paginate_path: 'page:num'
-
 # Markdown library
 markdown: kramdown
 # Markdown library options
