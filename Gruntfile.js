@@ -374,7 +374,7 @@ module.exports = function(grunt) {
     favicons: {
       options: {
         html: 'dist/index.html',
-        HTMLPrefix: '/',
+        HTMLPrefix: '',
         appleTouchBackgroundColor: '#ffffff',
         tileColor: '#ffffff'
       },
