@@ -7,7 +7,7 @@
 //   images: images
 //   fonts: fonts
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   'use strict';
 
   // Show elapsed time after tasks run
@@ -314,8 +314,10 @@ module.exports = function (grunt) {
         verbose: true
       },
       check: {
-       src: ['<%= yeoman.app %>/styles/**/*.css',
-             '<%= yeoman.app %>/styles/scss/**/*.scss']
+        src: [
+          '.tmp/styles/**/*.css',
+          '<%= yeoman.app %>/styles/**/*.css'
+        ]
       }
     },
     csslint: {
@@ -324,8 +326,8 @@ module.exports = function (grunt) {
       },
       check: {
         src: [
-          '<%= yeoman.app %>/styles/**/*.css',
-          '<%= yeoman.app %>/styles/scss/**/*.scss'
+          '.tmp/styles/**/*.css',
+          '<%= yeoman.app %>/styles/**/*.css'
         ]
       }
     },
@@ -342,31 +344,31 @@ module.exports = function (grunt) {
       ]
     },
     modernizr: {
-      'devFile' : '<%= yeoman.app %>/_bower_components/modernizr/modernizr.js',
-      'outputFile' : '<%= yeoman.app %>/_bower_components/modernizr/modernizr-custom.js',
-      'extra' : {
-        'shiv' : true,
-        'printshiv' : false,
-        'load' : false,
-        'mq' : false,
-        'cssclasses' : false
+      'devFile': '<%= yeoman.app %>/_bower_components/modernizr/modernizr.js',
+      'outputFile': '<%= yeoman.app %>/_bower_components/modernizr/modernizr-custom.js',
+      'extra': {
+        'shiv': true,
+        'printshiv': false,
+        'load': false,
+        'mq': false,
+        'cssclasses': false
       },
-      'extensibility' : {
-        'addtest' : false,
-        'prefixed' : false,
-        'teststyles' : false,
-        'testprops' : false,
-        'testallprops' : false,
-        'hasevents' : false,
-        'prefixes' : false,
-        'domprefixes' : false
+      'extensibility': {
+        'addtest': false,
+        'prefixed': false,
+        'teststyles': false,
+        'testprops': false,
+        'testallprops': false,
+        'hasevents': false,
+        'prefixes': false,
+        'domprefixes': false
       },
-      'uglify' : false,
+      'uglify': false,
       // Define any tests you want to implicitly include.
       // 'tests' : [],
-      'parseFiles' : true,
-      'files' : ['<%= yeoman.app %>'],
-      'matchCommunityTests' : true,
+      'parseFiles': true,
+      'files': ['<%= yeoman.app %>'],
+      'matchCommunityTests': true,
     },
     // TODO: fork grunt-favicons and use png2ico
     favicons: {
@@ -404,7 +406,7 @@ module.exports = function (grunt) {
   });
 
   // Define Tasks
-  grunt.registerTask('server', function (target) {
+  grunt.registerTask('server', function(target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
@@ -420,9 +422,9 @@ module.exports = function (grunt) {
 
   // No real tests yet. Add your own.
   grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'connect:test'
+    //   'clean:server',
+    //   'concurrent:test',
+    //   'connect:test'
   ]);
 
   grunt.registerTask('check', [
@@ -451,7 +453,14 @@ module.exports = function (grunt) {
     'favicons',
     'shell',
     'htmlmin'
-    ]);
+  ]);
+
+  grunt.registerTask('deploy', [
+    'check',
+    'test',
+    'build',
+    'buildcontrol'
+  ]);
 
   grunt.registerTask('default', [
     'check',
