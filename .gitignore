@@ -36,4 +36,4 @@ Thumbs.db
 app/_bower_components
 node_modules/
 .tmp
-Gruntfile.min.js
+dist/
